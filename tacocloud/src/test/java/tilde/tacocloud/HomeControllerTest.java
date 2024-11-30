@@ -22,6 +22,7 @@ public class HomeControllerTest {
     public void testHomeCloud() throws Exception {
         mockMvc.perform(get("/")) // Performs GET
                 .andExpect(status().isOk())
-                .andExpect(view().name("home"));
+                .andExpect(view().name("home"))
+                .andExpect(content().string(containsString("Welcome to the taco cloud service...")));
     }
 }
