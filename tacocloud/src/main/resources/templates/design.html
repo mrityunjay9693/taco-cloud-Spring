@@ -18,7 +18,35 @@
                 <h3>Designate your wrap:</h3>
                 <div th:each="ingredient : ${wrap}">
                     <input type="checkbox" name="ingredients" id="" th:value="${ingredient.id}">
-                    <span></span>
+                    <span th:text="${ingredient.name}">INGREDIENT</span> <br>
+                </div>
+            </div>
+            <div class="ingredient-group" id="proteins">
+                <h3>Pick your protein:</h3>
+                <div th:each="ingredient : ${protein}">
+                    <input type="checkbox" name="ingredients" id="" th:value="${ingredient.id}">
+                    <span th:text="${ingredient.name}">INGREDIENT</span>
+                </div>
+            </div>
+            <div class="ingredient-group" id="cheeses">
+                <h3>Choose your cheese:</h3>
+                <div th:each="ingredient : ${cheese}">
+                    <input type="checkbox" name="ingredients" id="" th:value="${ingredient.id}">
+                    <span th:text="${ingredient.name}">INGREDIENT</span>
+                </div>
+            </div>
+            <div class="ingredient-group" id="veggies">
+                <h3>Pick your veggie:</h3>
+                <div th:each="ingredient : ${veggies}">
+                    <input type="checkbox" name="ingredients" id="" th:value="${ingredient.id}">
+                    <span th:text="${ingredient.name}">INGREDIENT</span>
+                </div>
+            </div>
+            <div class="ingredient-group" id="sauces">
+                <h3>Choose your sauce:</h3>
+                <div th:each="ingredient : ${sauce}">
+                    <input type="checkbox" name="ingredients" id="" th:value="ingredient.id">
+                    <span th:text="${ingredient.name}">INGREDIENTS</span>
                 </div>
             </div>
         </div>
