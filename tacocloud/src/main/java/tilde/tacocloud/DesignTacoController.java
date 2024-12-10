@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +39,14 @@ public class DesignTacoController {
         return "design";    // view "design" is returned.
 
     }
+    @PostMapping
+    public String processDesign(Design design){ // return : String , whenever, Whenever a URL or view returns here,So return type is always "String".
+        //Save the taco design...
+        //W'll do later.
+        log.info("Processing design:"+design);
+        log.info("Testing logger");
+        return "redirect:/orders/current";
+    }  
 
     private List<Ingredients> filterByType(List<Ingredients> ingredients, Type type) {
         return ingredients
