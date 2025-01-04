@@ -9,9 +9,32 @@
 </head>
 
 <body>
-    <form action="@{/orders}" th:object="${order}" method="post">
-        <h1>Order your taco creation!</h1>
+    <form th:action="@{/orders}" th:object="${order}" method="post">
+        <h1>Order your taco creation!</h1>        
         <img th:src="@{/images/taco.png}" alt="" width="300">
+        <a th:href="@{/design}" id="another">Design another taco</a> <br>
+
+        <p>Taco Creation Project Testing...</p>
+        
+        <div th:if="${#fields.hasErrors()}">
+            <p>Taco Cloud Testing</p>
+            <span class="validationError">
+                Please Correct the problems below and resubmit.
+            </span>
+        </div>
+
+        <h3>Deliver my taco masterpieces to...</h3>
+        <label for="name">Name:</label>
+        <input type="text" th:field="*{name}">
+        <br>
+
+        <label for="street">Street address:</label>
+        <input type="text" th:field="*{street}">
+        <br>
+
+        
+
+        <h3>Deliver my taco masterpieces to ...</h3> <!-- Testing -->
     </form>
 </body>
 </html>
