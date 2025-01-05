@@ -3,6 +3,7 @@ package tilde.tacocloud;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,4 +18,10 @@ public class OrderController {
         //log.info("Testing!");   
         return "orderForm";  // returning a logical view name of orderForm.
     }   
+
+    @PostMapping
+    public String processOrder(Order order){
+        log.info("Order submitted: "+order);
+        return "redirect:/";
+    }
 }   
