@@ -10,14 +10,13 @@
 
 <body>
     <form th:action="@{/orders}" th:object="${order}" method="post">
-        <h1>Order your taco creation!</h1>        
+        <h1>Order your taco creation!</h1>
         <img th:src="@{/images/taco.png}" alt="" width="300">
         <a th:href="@{/design}" id="another">Design another taco</a> <br>
 
         <p>Taco Creation Project Testing...</p>
-        
+
         <div th:if="${#fields.hasErrors()}">
-            <p>Taco Cloud Testing</p>
             <span class="validationError">
                 Please Correct the problems below and resubmit.
             </span>
@@ -26,18 +25,22 @@
         <h3>Deliver my taco masterpieces to...</h3>
         <label for="name">Name:</label>
         <input type="text" th:field="*{name}">
+        <span class="validationError" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
         <br>
 
         <label for="street">Street address:</label>
         <input type="text" th:field="*{street}">
+        <span class="validationError" th:if="${#fields.hasErrors('street')}" th:errors="*{street}">Street Error</span>
         <br>
 
         <label for="city">City:</label>
         <input type="text" th:field="*{city}">
+        <span class="validationError" th:if="${#fields.hasErrors('city')}" th:errors="*{city}">City Error</span>
         <br>
 
         <label for="state">State:</label>
         <input type="text" th:field="*{state}">
+        <span class="validationError" th:if="${#fields.hasErrors('state')}" th:errors="*{state}">State Error</span>
         <br>
 
         <label for="zip">Zip Code:</label>
@@ -47,6 +50,8 @@
         <h3>Here's how I'll pay ...</h3>
         <label for="ccNumber">Credit Card #:</label>
         <input type="text" th:field="*{ccNumber}">
+        <span class="validationError" th:if="${#fields.hasErrors('ccNumber')}" th:errors="*{ccNumber}">CC Number
+            Error</span>
         <br>
 
         <label for="ccExpiration">Expiration:</label>
@@ -61,4 +66,5 @@
         <h3>Deliver my taco masterpieces to ...</h3> <!-- Testing -->
     </form>
 </body>
+
 </html>
