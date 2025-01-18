@@ -1,5 +1,7 @@
 package tilde.tacocloud;
 
+import java.util.Date;
+
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -8,6 +10,10 @@ import lombok.Data;
 
 @Data
 public class Order {
+    private long id;
+
+    private Date placedAt;
+
     @NotBlank(message = "Name is required")
     private String name;
 
