@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-public class Taco {                         // Domain class(data related) / Model class, Taco : It is the collection of ingredient.
+public class Taco {     // Domain class(data related) / Model class, Taco : It is the collection of ingredient.
     private Long id; 
     private Date createdAt;
  
