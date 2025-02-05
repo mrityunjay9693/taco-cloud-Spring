@@ -15,7 +15,7 @@ public class Taco {     // Domain class(data related) / Model class, Taco : It i
     @Size(min=5, message="Name must be at least 5 characters long")
     private String name;                    //name : It can be unique, can be worked as identity
     @Size(min=1, message="You must choose at least 1 ingredient.")
-    private List<String> ingredients;       //ingredient: All ingredients are string i.e., here List is of type String.
+    private List<Ingredient> ingredients;       //ingredient: All ingredients are string i.e., here List is of type String.
 } 
 
 //We can also create a "record"
